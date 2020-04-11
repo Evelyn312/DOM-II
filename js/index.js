@@ -2,7 +2,7 @@
 
 
 window.addEventListener('scroll', () => {
-    document.getElementsByClassName('main-navigation')[0].style.backgroundColor = "teal";
+    document.getElementsByClassName('main-navigation')[0].style.backgroundColor = "lightpink";
 });
 
 let navTag = document.querySelectorAll('.main-navigation .nav-link');
@@ -15,15 +15,24 @@ navTag.forEach((tag) => {
         tag.style.color = "green";
     });
     tag.addEventListener('mouseout', () =>{
-        tag.style.color = "pink";
+        tag.style.color = "red";
+    });''
+    tag.addEventListener('click',(event) => {
+        event.preventDefault();
     });
-
 });
 
 let signUpButt = document.querySelectorAll('.destination .btn');
 signUpButt.forEach((butt) => {
-    butt.addEventListener('click', () => {
+    butt.addEventListener('click', (event) => {
+        event.stopPropagation();
         prompt('Please enter your email');
+    })
+});
+let destin = document.querySelectorAll('.destination');
+destin.forEach((dest) => {
+    dest.addEventListener('click',() => {
+        dest.style.backgroundColor = '#f7e6ff';
     })
 });
 
