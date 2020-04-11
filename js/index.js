@@ -1,11 +1,9 @@
 // Your code goes here
-// let body = document.getElementsByTagName('body');
-// body.addEventListener('scroll', () =>{
-//     let head = document.getElementsByTagName('header');
-//     console.log("this is the head", head);
-//     // document.getElementsByTagName('header').style.backgroundColor = blue;
-// });
 
+
+window.addEventListener('scroll', () => {
+    document.getElementsByClassName('main-navigation')[0].style.backgroundColor = "teal";
+});
 
 let navTag = document.querySelectorAll('.main-navigation .nav-link');
 
@@ -16,6 +14,10 @@ navTag.forEach((tag) => {
     tag.addEventListener('mouseover', () =>{
         tag.style.color = "green";
     });
+    tag.addEventListener('mouseout', () =>{
+        tag.style.color = "pink";
+    });
+
 });
 
 let signUpButt = document.querySelectorAll('.destination .btn');
@@ -34,5 +36,25 @@ allPara.forEach((para) => {
     para.addEventListener('mouseleave', () => {
         para.style.transform = 'scale(1.0)';
    
+    })
+});
+
+let allImg = document.querySelectorAll('img');
+allImg.forEach((image) => {
+    image.addEventListener('wheel', () => {
+        image.style.transform = 'rotate(360deg)';
+        image.style.transition = 'transform 2s';
+    })
+});
+
+let allH2 = document.querySelectorAll('h2');
+allH2.forEach((oneH2) => {
+    oneH2.addEventListener('mousedown', () => {
+        oneH2.style.color = 'pink';
+
+    })
+    oneH2.addEventListener('mouseup', () => {
+        oneH2.style.color = 'grey';
+
     })
 });
